@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import * as Icon from 'react-icons/fa';
 import axios from 'axios';
 
-import * as S from './styles';
+import * as S from '../styles';
 
 interface IResponse {
   avatar_url: string;
