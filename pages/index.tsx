@@ -15,6 +15,10 @@ interface HomeProps {
   htmlUrl: string;
 }
 
+const personalEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
+
+console.log(personalEmail);
+
 const Home: React.FC<HomeProps> = ({ avatarUrl, htmlUrl }) => {
   const socialNetworks = useMemo(() => {
     return {
@@ -45,7 +49,7 @@ const Home: React.FC<HomeProps> = ({ avatarUrl, htmlUrl }) => {
           <span role="img" aria-label="computer">
             Software Developer 🛠 💻
           </span>
-          <a href="mailto:me@dscamargo.com">me@dscamargo.com</a>
+          <a href={`mailto:${personalEmail}`}>{personalEmail}</a>
         </S.Informations>
 
         <S.SocialNetworksContainer>
