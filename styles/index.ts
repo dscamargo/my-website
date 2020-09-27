@@ -1,4 +1,47 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100px)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px)
+  }
+`;
+
+const appearFromRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100px)
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px)
+  }
+`;
+
+const appearFromTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-100px)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+`;
+const appearFromBottom = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(100px)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+`;
 
 export const Container = styled.div`
   background: #4a7b9d;
@@ -21,9 +64,15 @@ export const MainContainer = styled.div`
   background: transparent;
   border-radius: 8px;
   border-style: dashed;
-  border-color: #000;
+  border-color: rgba(0, 0, 0, 0.4);
   border-width: 2px;
   padding: 30px;
+  animation: ${appearFromLeft} 1s;
+  transition: border-color 0.4s;
+
+  :hover {
+    border-color: #000;
+  }
 
   @media (max-width: 650px) {
     border: none;
@@ -45,6 +94,12 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 180px;
+    transition: all 1s ease;
+    animation: ${appearFromTop} 1s;
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.8);
+    }
 
     @media (max-width: 650px) {
       width: 140px;
@@ -59,35 +114,11 @@ export const MainContainer = styled.div`
   }
 `;
 
-export const ImageLabel = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  transition: 0.2s ease-in-out;
-
-  :hover {
-    opacity: 1;
-    transform: rotateY(180deg);
-  }
-
-  > svg {
-    font-size: 80px;
-    color: #000;
-  }
-`;
-
 export const Informations = styled.div`
   width: 50%;
   height: auto;
   margin-top: 20px;
+  animation: ${appearFromBottom} 1s;
 
   @media (max-width: 650px) {
     width: 100%;
@@ -98,6 +129,12 @@ export const Informations = styled.div`
     display: block;
     text-align: center;
     font-size: 24px;
+  }
+
+  a {
+    :hover {
+      color: rgba(0, 0, 0, 0.6);
+    }
   }
 
   span,
@@ -119,6 +156,7 @@ export const SocialNetworksContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  animation: ${appearFromRight} 1s;
 
   a {
     text-decoration: none;

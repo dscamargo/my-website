@@ -35,9 +35,6 @@ const Home: React.FC<HomeProps> = ({ avatarUrl, htmlUrl }) => {
           onClick={() => window.open(socialNetworks.github, 'blank')}
           type="button"
         >
-          <S.ImageLabel>
-            <Icon.FaGithub />
-          </S.ImageLabel>
           <img src={avatarUrl} alt="github_avatar" />
         </button>
 
