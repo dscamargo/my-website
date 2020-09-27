@@ -17,8 +17,6 @@ interface HomeProps {
 
 const personalEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
 
-console.log(personalEmail);
-
 const Home: React.FC<HomeProps> = ({ avatarUrl, htmlUrl }) => {
   const socialNetworks = useMemo(() => {
     return {
