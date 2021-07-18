@@ -48,21 +48,21 @@ const Home: React.FC<HomeProps> = ({ avatarUrl, htmlUrl }) => {
         </S.Informations>
 
         <S.SocialNetworksContainer>
-          <a href={socialNetworks.github} target="_blank" rel="noreferrer">
+          { socialNetworks.github && <a href={socialNetworks.github} target="_blank" rel="noreferrer">
             <Icon.FaGithub size={40} />
-          </a>
-          <a href={socialNetworks.linkedin} target="_blank" rel="noreferrer">
+          </a> }
+          { socialNetworks.linkedin && <a href={socialNetworks.linkedin} target="_blank" rel="noreferrer">
             <Icon.FaLinkedin size={40} />
-          </a>
-          <a href={socialNetworks.twitter} target="_blank" rel="noreferrer">
+          </a> }
+          { socialNetworks.twitter && <a href={socialNetworks.twitter} target="_blank" rel="noreferrer">
             <Icon.FaTwitter size={40} />
-          </a>
-          <a href={socialNetworks.instagram} target="_blank" rel="noreferrer">
+          </a> }
+          { socialNetworks.instagram && <a href={socialNetworks.instagram} target="_blank" rel="noreferrer">
             <Icon.FaInstagram size={40} />
-          </a>
-          <a href={socialNetworks.spotify} target="_blank" rel="noreferrer">
+          </a> }
+          { socialNetworks.spotify && <a href={socialNetworks.spotify} target="_blank" rel="noreferrer">
             <Icon.FaSpotify size={40} />
-          </a>
+          </a> }
         </S.SocialNetworksContainer>
       </S.MainContainer>
     </S.Container>
